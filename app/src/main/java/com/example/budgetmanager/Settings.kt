@@ -1,4 +1,4 @@
-package com.example.passwordmanager
+package com.example.budgetmanager
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import com.example.passwordmanager.data.db.AppDatabaseHelper
+import com.example.budgetmanager.R
+import com.example.budgetmanager.data.db.AppDatabaseHelper
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 class Settings : Fragment() {
@@ -31,7 +32,7 @@ class Settings : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
         dbHelper = AppDatabaseHelper(requireContext())
@@ -52,7 +53,6 @@ class Settings : Fragment() {
         tvSubFirstDayWeek = view.findViewById(R.id.tvSubFirstDayWeek)
         tvSubFirstDayMonth = view.findViewById(R.id.tvSubFirstDayMonth)
 
-        // Setup click listeners for options
         view.findViewById<LinearLayout>(R.id.itemLanguage).setOnClickListener {
             showChoiceDialog("Language", arrayOf("Default", "English", "Spanish", "Hindi"), tvSubLanguage, "setting_language")
         }
@@ -81,7 +81,6 @@ class Settings : Fragment() {
             showChoiceDialog("First day of month", arrayOf("1", "15", "30"), tvSubFirstDayMonth, "setting_first_day_month")
         }
 
-        // Setup switch listeners
         switchBudget.setOnCheckedChangeListener { _, isChecked ->
             dbHelper.saveSetting("setting_budget", isChecked.toString())
             Toast.makeText(requireContext(), "Budget ${if (isChecked) "Enabled" else "Disabled"}", Toast.LENGTH_SHORT).show()

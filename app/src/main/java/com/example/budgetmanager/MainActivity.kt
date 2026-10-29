@@ -1,4 +1,4 @@
-package com.example.passwordmanager
+package com.example.budgetmanager
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.budgetmanager.R
 
 class MainActivity : AppCompatActivity() {
 

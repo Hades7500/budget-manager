@@ -1,4 +1,4 @@
-package com.example.passwordmanager.data.model
+package com.example.budgetmanager.data.model
 
 data class TransactionModel(
     val id: Long = 0,
@@ -9,6 +9,6 @@ data class TransactionModel(
     val paymentMethod: String = "Card",
     val timestamp: Long = System.currentTimeMillis(),
     val year: Int = 2026,
-    val month: Int = 10, // 10 = October
+    val month: Int = 10,
     val day: Int = 3
 )

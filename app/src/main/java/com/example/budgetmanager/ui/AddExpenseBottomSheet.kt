@@ -1,16 +1,17 @@
-package com.example.passwordmanager.ui
+package com.example.budgetmanager.ui
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import com.example.passwordmanager.R
-import com.example.passwordmanager.data.db.AppDatabaseHelper
-import com.example.passwordmanager.data.model.TransactionModel
+import com.example.budgetmanager.R
+import com.example.budgetmanager.data.db.AppDatabaseHelper
+import com.example.budgetmanager.data.model.TransactionModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
+import android.R as AndroidR
 
 object AddExpenseBottomSheet {
 
@@ -40,12 +41,12 @@ object AddExpenseBottomSheet {
         val btnCancel = view.findViewById<MaterialButton>(R.id.btnCancel)
         val btnSave = view.findViewById<MaterialButton>(R.id.btnSave)
 
-        val catAdapter = ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, categories)
+        val catAdapter = ArrayAdapter(context, AndroidR.layout.simple_spinner_dropdown_item, categories)
         spinnerCategory.adapter = catAdapter
         val initialCatIdx = categories.indexOf(defaultCategory).takeIf { it >= 0 } ?: 0
         spinnerCategory.setSelection(initialCatIdx)
 
-        val payAdapter = ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, paymentMethods)
+        val payAdapter = ArrayAdapter(context, AndroidR.layout.simple_spinner_dropdown_item, paymentMethods)
         spinnerPaymentMethod.adapter = payAdapter
 
         btnCancel.setOnClickListener {

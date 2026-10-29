@@ -1,4 +1,4 @@
-package com.example.passwordmanager.ui
+package com.example.budgetmanager.ui
 
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.passwordmanager.R
-import com.example.passwordmanager.data.model.TransactionModel
+import com.example.budgetmanager.R
+import com.example.budgetmanager.data.model.TransactionModel
 
 class TransactionAdapter(
     private var transactions: List<TransactionModel>,

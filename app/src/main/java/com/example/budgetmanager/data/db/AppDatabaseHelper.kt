@@ -1,10 +1,10 @@
-package com.example.passwordmanager.data.db
+package com.example.budgetmanager.data.db
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.passwordmanager.data.model.TransactionModel
+import com.example.budgetmanager.data.model.TransactionModel
 
 class AppDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 

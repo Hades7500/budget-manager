@@ -1,4 +1,4 @@
-package com.example.passwordmanager
+package com.example.budgetmanager
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,11 +12,14 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.passwordmanager.data.db.AppDatabaseHelper
-import com.example.passwordmanager.data.model.TransactionModel
-import com.example.passwordmanager.ui.AddExpenseBottomSheet
-import com.example.passwordmanager.ui.TransactionAdapter
+import com.example.budgetmanager.R
+import com.example.budgetmanager.data.db.AppDatabaseHelper
+import com.example.budgetmanager.data.model.TransactionModel
+import com.example.budgetmanager.ui.AddExpenseBottomSheet
+import com.example.budgetmanager.ui.TransactionAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.Locale
+import kotlin.math.abs
 
 class Transactions : Fragment() {
 
@@ -26,7 +29,7 @@ class Transactions : Fragment() {
 
     private val monthNames = arrayOf(
         "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
-        "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
+        "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER",
     )
 
     private lateinit var tvTxTotalBalance: TextView
@@ -45,7 +48,7 @@ class Transactions : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         val view = inflater.inflate(R.layout.fragment_transactions, container, false)
         dbHelper = AppDatabaseHelper(requireContext())
@@ -82,8 +85,7 @@ class Transactions : Fragment() {
                 defaultCategory = "Food",
                 year = currentYear,
                 month = currentMonth,
-                onSaved = { refreshData() }
-            )
+            ) { refreshData() }
         }
 
         ivTxSearch.setOnClickListener {
@@ -167,8 +169,8 @@ class Transactions : Fragment() {
         val startBal = dbHelper.getStartingBalance(currentYear, currentMonth)
         val endBal = dbHelper.getEndingBalance(currentYear, currentMonth)
 
-        tvStartingBalance.text = "-\u20B9 ${String.format("%.2f", Math.abs(startBal))}"
-        tvEndingBalance.text = "-\u20B9 ${String.format("%.2f", Math.abs(endBal))}"
-        tvTxTotalBalance.text = "-\u20B9 ${Math.abs(endBal).toInt()}"
+        tvStartingBalance.text = "-\u20B9 ${String.format(Locale.US, "%.2f", abs(startBal))}"
+        tvEndingBalance.text = "-\u20B9 ${String.format(Locale.US, "%.2f", abs(endBal))}"
+        tvTxTotalBalance.text = "-\u20B9 ${abs(endBal).toInt()}"
     }
 }

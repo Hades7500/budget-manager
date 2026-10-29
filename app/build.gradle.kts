@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.passwordmanager"
+    namespace = "com.example.budgetmanager"
     compileSdk {
         version = release(37) {
             minorApiLevel = 1
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.passwordmanager"
+        applicationId = "com.example.budgetmanager"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
