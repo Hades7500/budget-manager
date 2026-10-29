@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingVertical="12dp">
+
+    <ImageView
+        android:id="@+id/ivCategoryIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="#2D55FF"
+        android:contentDescription="Category"
+        android:padding="12dp"
+        android:src="@drawable/ic_food" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCategoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:contentDescription="Card"
+                android:src="@drawable/ic_card" />
+
+            <TextView
+                android:id="@+id/tvPaymentMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Card"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTitleNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pizza"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\u20B9 270"
+        android:textColor="@color/accent_red"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

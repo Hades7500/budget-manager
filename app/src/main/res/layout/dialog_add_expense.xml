@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_card"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Expense"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Amount Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Amount (\u20B9)"
+        app:hintTextColor="@color/accent_blue"
+        app:boxStrokeColor="@color/accent_blue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Title / Description Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Title / Note (e.g. Pizza)"
+        app:hintTextColor="@color/accent_blue"
+        app:boxStrokeColor="@color/accent_blue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:textColor="@color/text_primary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Category Selector -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Category"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp" />
+
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_pill_date"
+        android:paddingHorizontal="12dp" />
+
+    <!-- Payment Method Selector -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Payment Method"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp" />
+
+    <Spinner
+        android:id="@+id/spinnerPaymentMethod"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_pill_date"
+        android:paddingHorizontal="12dp" />
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@color/text_secondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/accent_blue"
+            android:text="Save Expense"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>
