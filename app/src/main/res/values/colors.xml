@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bg_dark">#16151A</color>
+    <color name="bg_card">#212028</color>
+    <color name="accent_blue">#4C62D6</color>
+    <color name="accent_red">#E95B7B</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#9A99A2</color>
+    <color name="nav_bg">#16151A</color>
+    <color name="nav_item_selected">#2E2D38</color>
+    <color name="divider_color">#2C2B35</color>
 </resources>
